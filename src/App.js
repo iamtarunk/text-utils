@@ -2,13 +2,13 @@ import './App.css';
 import React, {useState} from 'react';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
-// import About from './Components/About';
+import About from './Components/About';
 import Alert from './Components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [themeText,setThemeText] = useState("Enable Dark mode");
@@ -45,15 +45,17 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar title="Text Utils" style={theme} theme={themeText} clickTheme={changeTheme}/>
         <Alert alert={alert}/>
-        <TextForm style={theme}/>
-        {/* <Routes>
-          <Route exact path="/textform" element={<TextForm style={theme}/>}/>
+        {/* <TextForm style={theme}/> */}
+        <Routes>
+          <Route exact path="/" element={<TextForm style={theme}/>}/>
+        </Routes>
+        <Routes>
           <Route exact path="/about" element={<About/>}/>
         </Routes>
-      </Router> */}
+      </Router>
     </>
   );
 }
