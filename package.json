@@ -1,6 +1,6 @@
 {
-  "homepage": "https://iamtarunk.github.io/text-utils-2",
-  "name": "text-utils-2",
+  "homepage": "https://iamtarunk.github.io/text-utils",
+  "name": "text-utils",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
