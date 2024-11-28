@@ -14,30 +14,7 @@ function App() {
   const [themeText,setThemeText] = useState("Enable Dark mode");
   const [theme,setTheme] = useState("light");
   const [alert,setAlert] = useState(null);
-  const [colorPallete,setColorPallete] = useState(theme)
-  const themePallete = {
-    blueShade : {
-      color: "5C2FC2",
-      backgroundColor:"5C88C4"
-    },
-    orangeShade : {
-      color: "FF7D29",
-      backgroundColor:"FFBF78"
-    },
-    brownShade : {
-      color: "322C2B",
-      backgroundColor:"803D3B"
-    }
-  }
-  const changePallete = ()=>{
-    if(colorPallete === themePallete.blueShade){
-      setColorPallete(themePallete.blueShade)
-    }else if(colorPallete === themePallete.orangeShade){
-      setColorPallete(themePallete.orangeShade)
-    }else{
-      setColorPallete(themePallete.brownShade)
-    }
-  }
+  
 
   const showAlert = (message,type)=>{
     setAlert({
@@ -69,7 +46,7 @@ function App() {
   return (
     <>
       {/* <Router> */}
-        <Navbar title="Text Utils" style={theme} pallete={changePallete} theme={themeText} clickTheme={changeTheme}/>
+        <Navbar title="Text Utils" style={theme} theme={themeText} clickTheme={changeTheme}/>
         <Alert alert={alert}/>
         <TextForm style={theme}/>
         {/* <Routes>

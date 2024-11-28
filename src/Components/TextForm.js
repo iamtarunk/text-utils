@@ -22,6 +22,9 @@ export default function TextForm(props){
     const handleClear = ()=>{
         setText("");
     }
+    const handleWhiteSpace = ()=>{
+        setText(text.replaceAll(/\s+/g," "));
+    }
     return (
         <>
         <div className={`textForm container text-${props.style === "light"?"dark":"light"}`}>
@@ -32,11 +35,13 @@ export default function TextForm(props){
                 <button className='btn btn-primary m-3' onClick={handleLoClick}>Convert to Lower Case</button>
                 <button className='btn btn-primary m-3' onClick={handleCopy}>Copy to Clipboard</button>
                 <button className='btn btn-primary m-3' onClick={handleClear}>Clear text</button>
+                <button className='btn btn-primary m-3' onClick={handleWhiteSpace}>Remove white Space</button>
             </div>
-            <h2>Preview of text</h2>
-            <p>{text}</p>
             <h2>Text Summary</h2>
-            <p>{text.split(" ").length-1} number of words and {text.length} number of letters</p>
+            <h3>Preview of text</h3>
+            <p>{text}</p>
+            <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} number of words and {text.length} number of letters</p>
+            <p>{0.008 *  text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes read</p>
         </div>
         </>
     )
